@@ -6,18 +6,21 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 
 # Carregue as variáveis de ambiente do arquivo .env
-load_dotenv()
+load_dotenv("api.env")
 
 # Acesse as variáveis de ambiente
 google_api_key = os.getenv("GOOGLE_API_KEY")
 telegram_bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
+
+print("Token do Telegram:", telegram_bot_token)
+print("Token do Gemini:", google_api_key) 
 
 # Configure a API do Gemini 
 genai.configure(api_key=google_api_key)
 
 # Configuração do modelo
 generation_config = {
-    "temperature": 0.7,  # Ajuste a temperatura para um comportamento mais controlado
+    "temperature": 1,  # Ajuste a temperatura para um comportamento mais controlado
     "top_p": 0.95,
     "top_k": 64,
     "max_output_tokens": 8192,
