@@ -1,10 +1,19 @@
+import os
+from dotenv import load_dotenv
 import google.generativeai as genai
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 
-# Configure a API do Gemini diretamente com a chave da API
-genai.configure(api_key="AIzaSyCFeLl-qkf6TgYyehsKa55KCMDBs9v36f8")
+# Carregue as variáveis de ambiente do arquivo .env
+load_dotenv()
+
+# Acesse as variáveis de ambiente
+google_api_key = os.getenv("GOOGLE_API_KEY")
+telegram_bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
+
+# Configure a API do Gemini 
+genai.configure(api_key=google_api_key)
 
 # Configuração do modelo
 generation_config = {
@@ -82,7 +91,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
 # Construção do aplicativo e adição dos manipuladores
-app = ApplicationBuilder().token("7565454506:AAF__8iefqkstO1obMNb_RyL-mtRquNpIM0").build()
+app = ApplicationBuilder().token(telegram_bot_token).build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
