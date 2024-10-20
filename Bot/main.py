@@ -9,14 +9,14 @@ from google.generativeai.types import HarmCategory, HarmBlockThreshold
 load_dotenv("api.env")
 
 # Acesse as variáveis de ambiente
-google_api_key = os.getenv("GOOGLE_API_KEY")
+gemini_api_key = os.getenv("GEMINI_API_KEY")
 telegram_bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
 
 print("Token do Telegram:", telegram_bot_token)
-print("Token do Gemini:", google_api_key) 
+print("Token do Gemini:", gemini_api_key) 
 
 # Configure a API do Gemini 
-genai.configure(api_key=google_api_key)
+genai.configure(api_key=gemini_api_key)
 
 # Configuração do modelo
 generation_config = {
