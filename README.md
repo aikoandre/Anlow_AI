@@ -1,7 +1,7 @@
 <h1>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo" width="20" style="vertical-align: middle;" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo" width="25" style="vertical-align: middle;" />
   Telegram Bot powered by Gemini API
-  <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.png" alt="Gemini Logo" width="20" style="vertical-align: middle;" />
+  <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.png" alt="Gemini Logo" width="25" style="vertical-align: middle;" />
 </h1>
 
 <p>This is Anlow, a bot created with Gemini API inside Telegram, enhanced with some clever prompt tricks.</p>
